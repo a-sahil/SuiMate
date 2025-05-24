@@ -75,13 +75,14 @@ const Chat = () => {
     let partialBotMessageId: string | number | null = null;
 
     try {
-        const response = await fetch(`http://localhost:3001/api/chat`, { // Or '/api/chat' if using Vite proxy
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(langchainPayload),
-        });
+const response = await fetch(`${import.meta.env.VITE_API_URL}/chat`, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(langchainPayload),
+});
+
 
         if (!response.ok) {
             const errorData = await response.json().catch(() => ({ error: `HTTP error! status: ${response.status}` }));

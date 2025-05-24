@@ -13,6 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@langchain/community": "^0.3.44",
     "@langchain/langgraph": "^0.2.73",
     "@pelagosai/sui-agent-kit": "^0.0.52",
     "cors": "^2.8.5",
